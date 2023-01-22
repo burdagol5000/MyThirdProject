@@ -11,8 +11,8 @@ words=[["elephant","rhinoceros","zebra","giraffe"],
 def category_selection():
     chosen_category = int(input("Choose your Category: "))
     category_words=random.chosen_category=(words[chosen_category])
-    game=random.choice(category_words)
-    print(game)
+    chosen_word=random.choice(category_words)
+    print(chosen_word)
 try:
     category_selection()
 except ValueError:
@@ -25,3 +25,11 @@ except NameError:
     print("Please Select from the correct category!!")
     category_selection()
 
+def the_game(chosen_word):
+    
+    lives=5
+    incorrect_guess=[]
+    correct_guess=[]
+    answer=[]
+
+    
