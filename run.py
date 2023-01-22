@@ -19,35 +19,44 @@ def the_game(chosen_word):
         answer.append(letter)
         print('_', end=' ')
 
-    print("")
+        print("")
+    while True:
+        try:
+            guess=str(input("Enter your Answer:"))
+
+            if len(guess)!=1:
+                print("Please enter 1 letter only!")
+            if not guess[0].isalpha():
+                print("Please Enter a Letter!")
+            elif guess in incorrect_guess:
+                print("Letter has been selected already")
+            elif guess is not answer:
+                incorrect_guess.append(guess)
+                lives-=1
+            elif lives == 0:
+                print("\tGAME OVER!!!")
+                print_hangman(hangman_values)
+                print("The word is :", word.upper())
+        except ValueError:
+            print("Enter a correct answer!")
+
+      
+
+if __name__ == "__main__":
+    def category_selection():
+        chosen_category = int(input("Choose your Category: "))
+        category_words=random.chosen_category=(words[chosen_category])
+        chosen_word=random.choice(category_words)
+        the_game(chosen_word)    
     try:
-        guess=str(input("Enter your Answer:"))
-        
-        if len(guess)!=1:
-            print("Please enter 1 letter only!")
-        if not guess[0].isalpha():
-            print("Please Enter a Letter!")
-        if guess() in incorrect:
-            print("Letter has been selected already")
-             
-
+        category_selection()
     except ValueError:
-        print("Enter a correct answer!")
-
-def category_selection():
-    chosen_category = int(input("Choose your Category: "))
-    category_words=random.chosen_category=(words[chosen_category])
-    chosen_word=random.choice(category_words)
-    the_game(chosen_word)
-try:
-    category_selection()
-except ValueError:
-    print("Please Select from the correct category!!")
-    category_selection()
-except IndexError:
-    print("Please Select from the correct category!!")
-    category_selection()
-except NameError:
-    print("Please Select from the correct category!!")
-    category_selection()
+        print("Please Select from the correct category!!a")
+        category_selection()
+    except IndexError:
+        print("Please Select from the correct category!!b")
+        category_selection()
+    except NameError:
+        print("Please Select from the correct category!!c")
+        category_selection()
 
