@@ -14,31 +14,40 @@ def the_game(chosen_word):
     incorrect_guess=[]
     correct_guess=[]
     answer=[]
-    displayed_word=len(chosen_word)
+    displayed_word=chosen_word
     for letter in displayed_word:
+        answer.append(letter)
         print('_', end=' ')
-        print(letter)
+
+    print("")
+    try:
+        guess=str(input("Enter your Answer:"))
+        
+        if len(guess)!=1:
+            print("Please enter 1 letter only!")
+        if not guess[0].isalpha():
+            print("Please Enter a Letter!")
+        if guess() in incorrect:
+            print("Letter has been selected already")
+             
+
+    except ValueError:
+        print("Enter a correct answer!")
 
 def category_selection():
     chosen_category = int(input("Choose your Category: "))
     category_words=random.chosen_category=(words[chosen_category])
     chosen_word=random.choice(category_words)
+    the_game(chosen_word)
 try:
     category_selection()
-    the_game(chosen_word)
 except ValueError:
     print("Please Select from the correct category!!")
     category_selection()
-    the_game(chosen_word)
-
 except IndexError:
     print("Please Select from the correct category!!")
     category_selection()
-    the_game(chosen_word)
-
 except NameError:
     print("Please Select from the correct category!!")
     category_selection()
-    the_game(chosen_word)
-
 
