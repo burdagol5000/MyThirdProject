@@ -1,3 +1,4 @@
+import random
 name=input("Please Enter Your Name:")
 print(f'Welcome to Guess the word!, {name}')
 print("Please Choose your category:")
