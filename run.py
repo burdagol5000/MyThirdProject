@@ -8,28 +8,37 @@ print("2.Gods and Goddesses")
 words=[["elephant","rhinoceros","zebra","giraffe"],
 ["philippines","australia","russia","ukraine","ireland"],
 ["zeus","thor","odin","hermes","athena","ares","tyr"]]
-def category_selection():
-    chosen_category = int(input("Choose your Category: "))
-    category_words=random.chosen_category=(words[chosen_category])
-    chosen_word=random.choice(category_words)
-    print(chosen_word)
-try:
-    category_selection()
-except ValueError:
-    print("Please Select from the correct category!!")
-    category_selection()
-except IndexError:
-    print("Please Select from the correct category!!")
-    category_selection()
-except NameError:
-    print("Please Select from the correct category!!")
-    category_selection()
 
-def the_game(chosen_word):
-    
+def the_game(chosen_word): 
     lives=5
     incorrect_guess=[]
     correct_guess=[]
     answer=[]
+    displayed_word=len(chosen_word)
+    for letter in displayed_word:
+        print('_', end=' ')
+        print(letter)
 
-    
+def category_selection():
+    chosen_category = int(input("Choose your Category: "))
+    category_words=random.chosen_category=(words[chosen_category])
+    chosen_word=random.choice(category_words)
+try:
+    category_selection()
+    the_game(chosen_word)
+except ValueError:
+    print("Please Select from the correct category!!")
+    category_selection()
+    the_game(chosen_word)
+
+except IndexError:
+    print("Please Select from the correct category!!")
+    category_selection()
+    the_game(chosen_word)
+
+except NameError:
+    print("Please Select from the correct category!!")
+    category_selection()
+    the_game(chosen_word)
+
+
