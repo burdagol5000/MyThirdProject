@@ -17,12 +17,12 @@ def the_game(chosen_word):
     displayed_word=chosen_word
     for letter in displayed_word:
         if letter.isalpha():
-            answer.append('_')
-            correct_guess.append(letter)
-        else:
+            correct_guess.append("_")
             answer.append(letter)
+        else:
+            correct_guess.append(letter)
 
-    print("")
+    print(correct_guess)
     while True:
         try:
             guess=str(input("Enter your Answer:"))
@@ -37,19 +37,16 @@ def the_game(chosen_word):
                 incorrect_guess.append(guess)
                 lives=lives-1
                 print(incorrect_guess)
-                for letter in displayed_word:
-                    answer.append(letter)
-                    print('_',end=' ')
             if lives==0:
                 print("You Lose!")
                 print(f"The Word is {chosen_word}")
                 break
             if guess in answer:
-                correct_guess.append(guess)
+                for item in range(len(answer)):
+                    if displayed_word[item] == guess:
+                        correct_guess[item] = guess
+                
                 print(correct_guess)
-                for letter in displayed_word:
-                    answer.append(letter)
-                    print('_',end=' ')
         except ValueError:
             print("Enter a correct answer!")
 
