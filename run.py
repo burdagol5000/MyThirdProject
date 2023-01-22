@@ -16,12 +16,12 @@ def category_selection():
 try:
     category_selection()
 except ValueError:
-    print("Please Select from the correct category")
+    print("Please Select from the correct category!!")
     category_selection()
 except IndexError:
-    print("Please Select from the correct category")
+    print("Please Select from the correct category!!")
     category_selection()
 except NameError:
-    print("Please Select from the correct category")
+    print("Please Select from the correct category!!")
     category_selection()
 
