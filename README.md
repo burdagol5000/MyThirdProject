@@ -1,31 +1,57 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Guess the Word is a Python Based Game which is launch on the Heroku
 
-Welcome burdagol5000,
+User or player will choose from the category that they would like their word to come from and will have 5 chances to guess the word from their chosen category.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+<a href="https://guess-the-word.herokuapp.com/"> Live Game Link</a>
 
-## Reminders
+<img src="assets/images/guess1.png">
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+<h1>How to Play</h1>
+Guess the word took the inspiration from the hangman game which is guessing the word before the man is hanged or ran out of lives
 
-## Creating the Heroku app
+Players will be asked first of their name
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Then they will be welcomed and ask for the category they wish their word to come from
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Player will guess and enter 1 letter at a time to slowly reveal the answer
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The player will have 5 lives or 5 incorrect guesses, after which player will lose the game
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+If player has successfully guessed the word, player wins the game!
 
-Connect your GitHub repository and deploy as normal.
+Choose your category carefully, and goodluck!
 
-## Constraints
+<h1>Features<h1>
+<ul>
+<li>Random Word Chosen from the players choice of category</li>
+<img src="assets/images/project3-2.png">
+    
+    - Player will be given a random word based from the category he/she has chosen
+<img src="assets/images/project3-3.png">
+<li>Input Validation</li>
+ - game will only accept inputs that are from the category <br>
+ - game will not accept more than 1 letter input<br>
+ - game will not accept letter input if game requires player to enter a numeric value and vice versa<br>
+<img src="assets/images/project3-4.png">
+</ul>
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+<h2>Future Features</h2>
+<ul>
+<li>More categories</li>
+<li>More Words from each category</li>
+<li>A much cleaner UI</li>
+</ul>
 
------
-Happy coding!
+<h1>Data Model</h1>
+I had decided to make some functions for the game to seperate the work and to do DRY coding. 
+
+The first function is category_selection which will initiate on asking the player for his/her category and after player has chosen a correct category, the next function will be called on which is the_game and it consist of loops and if statements which comprises of the game itself. 
+
+And the third function is new_game which basically asks player if he/she wants to do another round of the game after he/she finishes the game.
+
+<h1>Testing</h1>
+I had manually tested the game and the tests i had done were:
+- tested code on Pep8 linter and confirmed there was no errors
+<img src="assets/images/project3-5.png">
+
+- 
