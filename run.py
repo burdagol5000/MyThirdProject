@@ -1,6 +1,8 @@
+# importing the random and os module
 import random
 import os
 
+# getting users name and welcome message
 name = input("Please Enter Your Name:")
 print(f'Welcome to Guess the word!, {name}')
 words = [["elephant", "rhinoceros", "zebra", "giraffe"],
@@ -8,12 +10,14 @@ words = [["elephant", "rhinoceros", "zebra", "giraffe"],
          ["zeus", "thor", "odin", "hermes", "athena", "ares", "tyr"]]
 
 
+# the main function that will run the game
 def the_game(chosen_word):
     lives = 5
     incorrect_guess = []
     correct_guess = []
     answer = []
     displayed_word = chosen_word
+    # displaying the number of letters player need to guess
     for letter in displayed_word:
         if letter.isalpha():
             correct_guess.append("_")
@@ -24,6 +28,7 @@ def the_game(chosen_word):
     while True:
         try:
             guess = str(input("Enter your Answer:"))
+            # validation for user to input the correct characters
             if len(guess) != 1:
                 print("Please enter 1 letter only!")
                 continue
@@ -33,6 +38,7 @@ def the_game(chosen_word):
             if guess in incorrect_guess:
                 print("Letter has been selected already")
                 continue
+            # checking for users input
             if guess not in answer:
                 incorrect_guess.append(guess)
                 lives = lives-1
@@ -59,6 +65,7 @@ def the_game(chosen_word):
             print("Enter a correct answer!")
 
 
+# function for starting a new game after finishing
 def new_game():
     new = str(input("Start a new game? Y=Yes  N=No, Exit :").upper())
     if new == "Y":
@@ -73,6 +80,7 @@ def new_game():
         new_game()
 
 
+# function for the selection of the category
 def category_selection():
     print("Please Choose your category:")
     print("0.Animals")
@@ -91,4 +99,5 @@ except ValueError:
     category_selection()
 except IndexError:
     print("Please Select from the correct category!!b")
-    category_selection()SS
+    category_selection()
+category_selection()
