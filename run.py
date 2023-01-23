@@ -86,18 +86,17 @@ def category_selection():
     print("0.Animals")
     print("1.Countries")
     print("2.Gods and Goddesses")
-    chosen_category = int(input("Choose your Category: "))
-    category_words = random.chosen_category = (words[chosen_category])
-    chosen_word = random.choice(category_words)
-    the_game(chosen_word)
+    try:
+        chosen_category = int(input("Choose your Category: "))
+        category_words = random.chosen_category = (words[chosen_category])
+        chosen_word = random.choice(category_words)
+        the_game(chosen_word)
+    except ValueError:
+        print("Please Select from the correct category!!a")
+        category_selection()
+    except IndexError:
+        print("Please Select from the correct category!!b")
+        category_selection()
 
 
-try:
-    category_selection()
-except ValueError:
-    print("Please Select from the correct category!!a")
-    category_selection()
-except IndexError:
-    print("Please Select from the correct category!!b")
-    category_selection()
 category_selection()
