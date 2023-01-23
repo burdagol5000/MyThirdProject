@@ -51,7 +51,50 @@ And the third function is new_game which basically asks player if he/she wants t
 
 <h1>Testing</h1>
 I had manually tested the game and the tests i had done were:
-- tested code on Pep8 linter and confirmed there was no errors
+<ul>
+<li>tested code on Pep8 linter and confirmed there was no errors</li> 
 <img src="assets/images/project3-5.png">
 
-- 
+
+<li>Tested on my mobile device and has ran smoothly</li>
+
+
+<img src="assets/images/mobile2.png">
+
+<li>Manually troubleshooting the code and giving it incorrect inputs to check for problems on the code</li>
+</ul>
+
+<h1>BUGS</h1>
+<ul>
+<li>Game tends to go back to category_selection function if I use else on the new_game function, so i used if instead of else to solve the problem</li>
+<li>the chosen_word parameter was not being detected on the_game function after I had chosen my category, I was able to solve it by moving calling of the_game function from the bottom of the except to inside the try</li>
+
+<h1>Remaining Bugs</h1>
+No bugs have been noted since then.
+
+<h1>Validation</h1>
+- no validation error from Pep8 Linter
+
+<img src="assets/images/project3-5.png">
+
+<h1>Deployment</h1>
+<ol>
+<li>Created on Heroku a new app</li>
+<li>On the settings tab, Set the buildpacks to python and nodejs on that order</li>
+<li>On the deploy tab, I select Github as my deployment method, then connect my repository</li>
+<li>Clicked on Manual deploy</li>
+<li>And here is the <a href="https://guess-the-word.herokuapp.com/">link(https://guess-the-word.herokuapp.com/)</a> for the game</li>
+</ol>
+
+<br>
+<br>
+<h1>Credits</h1>
+<ul>
+<li>Code Institute for the Python essentials course</li>
+<li>Programming with Mosh (https://www.youtube.com/@programmingwithmosh) for some python tutorial</li>
+<li>Bro Code (https://www.youtube.com/@BroCodez) for some python course/tutorial</li>
+<li>https://www.geeksforgeeks.org/ for some helpful tips on solving some of the bugs</li>
+<li>Stack overflow forum for some tips to solve some of my problems (https://stackoverflow.com/questions/)</li>
+<li>(https://github.com/python/cpython/blob/3.11/Lib/os.py) for the os module that I included</li>
+<li>(https://github.com/python/cpython/blob/3.11/Lib/random.py) for the random module that I included</li>
+</ul>
