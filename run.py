@@ -4,7 +4,9 @@ import os
 
 # getting users name and welcome message
 name = input("Please Enter Your Name:")
+print("====================================")
 print(f'Welcome to Guess the word!, {name}')
+print("====================================")
 words = [["elephant", "rhinoceros", "zebra", "giraffe"],
          ["philippines", "australia", "russia", "ukraine", "ireland"],
          ["zeus", "thor", "odin", "hermes", "athena", "ares", "tyr"]]
